@@ -1,0 +1,21 @@
+# Cryptocurrency Price Tracker using Quick Sort
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[0]
+
+    left = [x for x in arr[1:] if x <= pivot]
+    right = [x for x in arr[1:] if x > pivot]
+
+    return quicksort(left) + [pivot] + quicksort(right)
+
+# Cryptocurrency Prices
+prices = [45000, 32000, 60000, 28000, 50000]
+
+print("Original Prices:", prices)
+
+sorted_prices = quicksort(prices)
+
+print("Sorted Prices:", sorted_prices)
